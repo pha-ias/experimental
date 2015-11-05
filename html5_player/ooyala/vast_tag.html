@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>OOYALA VPAID TEST</title>
+  </head>
+
+  <!-- Load Ooyala Player -->
+  
+  <body>
+      My Player V3 Content.
+
+<!-- HTML5 Mode for testing, by default Flash player:  platform=html5-priority -->
+<script src='http://player.ooyala.com/v3/6e8e4f2e07864063a4207161447edddc'></script>
+
+<!-- The DIV elements specify the layout for the content elements. -->
+<div id='ooyalaplayer' style='width:480px;height:360px;'></div>
+
+<script>
+
+	var vastTag = 'http://adwol.com/a/vast.php?p=270&z=Stichwort+1%2CStichwort+2%2CTitel+des+Videos';
+
+	window.onload = function() {
+		window.player = OO.ready(function() {
+			OO.Player.create('ooyalaplayer', 'Rjc25seDr_ZAvFHNLKC2h6t3Wlmxnm7S', {
+				'vast': {
+					tagUrl: vastTag
+				}
+			}); 
+		});
+	};
+
+</script>
+
+  </body>
+
+</html>

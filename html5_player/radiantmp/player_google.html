@@ -1,0 +1,46 @@
+<!-- Include Radiant Media Player JavaScript file in your <body> or <head> -->
+<script type="text/javascript" src="http://cdn.radiantmediatechs.com/rmp/2.4.9/js/rmp.min.js"></script>
+<!-- Set up your wrapper div with its unique id -->
+<div id="rmpPlayer"></div>
+<!-- Set up player configuration options -->
+<script type="text/javascript">
+// First we specify bitrates to feed to the player
+var bitrates = {
+  mp4: [
+    ['Start', 'https://www.radiantmediaplayer.com/media/bbb-576p.mp4'],
+    ['360p', 'https://www.radiantmediaplayer.com/media/bbb-360p.mp4'],
+    ['576p', 'https://www.radiantmediaplayer.com/media/bbb-576p.mp4'],
+    ['720p', 'https://www.radiantmediaplayer.com/media/bbb-720p.mp4']
+  ],
+  webm: [
+   ['Start', 'https://www.radiantmediaplayer.com/media/bbb-576p.webm'],
+   ['Low', 'https://www.radiantmediaplayer.com/media/bbb-360p.webm'],
+   ['Med.', 'https://www.radiantmediaplayer.com/media/bbb-576p.webm'],
+   ['High', 'https://www.radiantmediaplayer.com/media/bbb-720p.webm']
+  ]
+};
+// Then we set our player settings
+var settings = {
+  // licenseKey: 'your-license-key', // Add this line for R2 or R3 users only
+  licenseKey: 'Y2lpZW1hc2txbyEqXyUwNzI9ejA9dXZ5ZWs3b2VjMnllaT9yb201ZGFzaXMzMGRiMEElXyo=',
+  bitrates: bitrates,  
+  delayToFade: 3000,
+  width: 640,
+  height: 360,
+  poster: 'https://www.radiantmediaplayer.com/images/poster-rmp-showcase.jpg',
+  displayStreams: true,
+
+  debug: true,
+  ads: true,
+  // adVpaidMode: 'enabled', /* 'disabled', 'friendlyiframe' */
+  // adTagUrl: "http://fw.adsafeprotected.com/vast?placementId=6&pubId=8&anId=7&advId=2&campId=3&chanId=5&originalVast=https://vwrapper.herokuapp.com/testFiles/vast3Macros.xml",
+  adVpaidMode: 'enabled', /* 'disabled', 'friendlyiframe' */  
+  adTagUrl: 'http://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=vmap&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ar%3Dpremidpost&cmsid=496&vid=short_onecue&correlator='
+};
+// Reference to the wrapper div (unique id)
+var element = 'rmpPlayer';
+// Create an object based on RadiantMP constructor
+var rmp = new RadiantMP(element);
+// Initialization ... test your page and done!
+rmp.init(settings);
+</script>
