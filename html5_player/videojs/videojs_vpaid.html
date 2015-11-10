@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<link href="http://vjs.zencdn.net/5.0/video-js.min.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/5.0/video.min.js"></script>
+
+
+<video id="really-cool-video" class="video-js vjs-default-skin" controls
+ preload="auto" width="640" height="264" poster="http://imgc.allpostersimages.com/images/P-473-488-90/65/6541/CMY4100Z/posters/inception-landscape-poster.jpg"
+ data-setup='{}'>
+  
+	<source type="video/webm" src="http://stream.flowplayer.org/bauhaus/624x260.webm"></source>
+	<source type="video/mp4" src="http://stream.flowplayer.org/bauhaus/624x260.mp4"></source>
+	<source type="video/ogv" src="http://stream.flowplayer.org/bauhaus/624x260.ogv"></source>
+
+  <p class="vjs-no-js">
+    To view this video please enable JavaScript, and consider upgrading to a web browser
+    that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+  </p>
+</video>
+
+<script>
+	
+	var player = videojs('really-cool-video', { /* Options */ }, function() {
+		console.log('Good to go!');
+
+		this.play(); // if you don't trust autoplay for some reason
+
+		// How about an event listener?
+		this.on('ended', function() {
+			console.log('awww...over so soon?');
+		});
+	});
+
+
+</script>

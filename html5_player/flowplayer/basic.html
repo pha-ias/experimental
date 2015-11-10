@@ -1,0 +1,31 @@
+<!-- 1. skin -->
+<link rel="stylesheet" href="http://releases.flowplayer.org/6.0.3/skin/functional.css">
+ 
+<!-- 2. jquery library - required for video tag based installs -->
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+ 
+<!-- 3. flowplayer -->
+<script src="http://releases.flowplayer.org/6.0.3/flowplayer.min.js"></script>
+
+<div id="player"></div>
+ 
+<script>
+// select the above element as player container
+var container = document.getElementById("player");
+
+		// <source type="video/webm" src="http://stream.flowplayer.org/bauhaus/624x260.webm"></source>
+		// <source type="video/mp4" src="http://stream.flowplayer.org/bauhaus/624x260.mp4"></source>
+		// <source type="video/ogv" src="http://stream.flowplayer.org/bauhaus/624x260.ogv"></source>
+ 
+// install flowplayer into selected container
+flowplayer(container, {
+    clip: {
+        sources: [
+              { type: "video/webm",
+                src:  "http://stream.flowplayer.org/bauhaus/624x260.webm" },
+              { type: "video/mp4",
+                src:  "http://stream.flowplayer.org/bauhaus/624x260.mp4" }
+        ]
+    }
+});
+</script>

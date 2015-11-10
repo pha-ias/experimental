@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+
+<!-- include css files : fp5 and plugin -->
+<link rel="stylesheet" type="text/css" href="http://releases.flowplayer.org/5.4.6/commercial/skin/minimalist.css" />
+<link rel="stylesheet" type="text/css" href="http://bigsool.com/assets/dfp/fp-ima-bridge-3.0/fp-ima.min-6106fccd.css" />
+
+<!-- include js files : Google IMA SDK, FP5 and plugin -->
+<script type="text/javascript" src="http://s0.2mdn.net/instream/html5/ima3.js"></script>
+<script type="text/javascript" src="http://releases.flowplayer.org/5.4.6/commercial/flowplayer.min.js"></script>
+<script type="text/javascript" src="http://bigsool.com/assets/dfp/fp-ima-bridge-3.0/fp-ima.min-5ce1f820.js"></script>
+<script type="text/javascript">flowplayer.conf.key = "$332983511016427, $289122895653393";</script>
+
+<!-- player style -->
+<style>
+	#myPlayer { width:624px; height:260px; margin:60px 0; background-image: url("http://flowplayer.org/media/img/demos/minimalist.jpg"); background-size:101%; }
+	@media (max-width: 480px) { #myPlayer { width:480px; height:260px; margin:30px 0 30px -10px; } }
+	@media (max-width: 320px) { #myPlayer { width:320px; height: 160px; margin:30px 0 30px -10px; } }
+</style>
+
+<!-- player -->
+<div id="myPlayer" class="flowplayer">
+	<!-- simpy put a script tag in your player div. If you need to create it via Javascript
+	     use the dynamic configuration -->
+	<script>
+
+		var adsafe_vast_url = "/vast.xml";
+
+		flowplayer_ima.conf({ 
+		ads: [
+			{ time : 0, adTagUrl : adsafe_vast_url }
+		]
+
+		// var google_vast_url = "https://pubads.g.doubleclick.net/gampad/ads?sz=640x360&iu=/6062/iab_vast_samples/skippable&ciu_szs=300x250,728x90&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=[referrer_url]&correlator=[timestamp]";
+
+		// flowplayer_ima.conf({ 
+		// ads: [
+		// 	{ time : 0, adTagUrl : google_vast_url }
+		// ]
+ });
+	</script>
+	<video>
+		<source type="video/webm" src="http://stream.flowplayer.org/bauhaus/624x260.webm"></source>
+		<source type="video/mp4" src="http://stream.flowplayer.org/bauhaus/624x260.mp4"></source>
+		<source type="video/ogv" src="http://stream.flowplayer.org/bauhaus/624x260.ogv"></source>
+	</video>
+</div>
